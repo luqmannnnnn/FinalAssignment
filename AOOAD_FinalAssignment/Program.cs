@@ -11,6 +11,7 @@ namespace AOOAD_FinalAssignment
         static void Main(string[] args)
         {
             Console.WriteLine("Testing");
+            Console.WriteLine("Testing2");
         }
     }
 }
