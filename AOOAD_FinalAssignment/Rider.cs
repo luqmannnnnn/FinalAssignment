@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace AOOAD_FinalAssignment
 {
-    class Program
+    class Rider
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        private string riderName;
+        private string riderDesc;
+        private int rPremiumPrice;
     }
 }

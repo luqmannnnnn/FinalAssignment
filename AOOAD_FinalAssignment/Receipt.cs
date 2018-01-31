@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace AOOAD_FinalAssignment
 {
-    class Program
+    class Receipt
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        private int receipt;
+        private DateTime rDAte;
+        private string paymentItem;
+        private double paymentAmt;
     }
 }

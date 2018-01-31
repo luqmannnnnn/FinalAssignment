@@ -6,11 +6,15 @@ using System.Threading.Tasks;
 
 namespace AOOAD_FinalAssignment
 {
-    class Program
+    class Employee
     {
-        static void Main(string[] args)
+        private string staffName;
+        private int staffNo;
+        private int policiesSold;
+
+        public double totalComm()
         {
-            
+
         }
     }
 }
