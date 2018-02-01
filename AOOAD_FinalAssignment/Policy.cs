@@ -97,6 +97,11 @@ namespace AOOAD_FinalAssignment
         }
 
         //For Observer Pattern
+        public Policy()
+        {
+            observers = new List<Observer>();       
+        }
+
         public void registerObserver(Observer o)
         {
             observers.Add(o);

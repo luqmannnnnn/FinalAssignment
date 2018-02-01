@@ -8,7 +8,7 @@ namespace AOOAD_FinalAssignment
 {
     interface Observer
     {
-       // update(string policy);   
+       //update(string policy);   
 
     }
 }
