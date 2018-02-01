@@ -12,6 +12,45 @@ namespace AOOAD_FinalAssignment
         private int staffNo;
         private int policiesSold;
 
+        public string StaffName
+        {
+            get
+            {
+                return staffName;
+            }
+
+            set
+            {
+                staffName = value;
+            }
+        }
+
+        public int StaffNo
+        {
+            get
+            {
+                return staffNo;
+            }
+
+            set
+            {
+                staffNo = value;
+            }
+        }
+
+        public int PoliciesSold
+        {
+            get
+            {
+                return policiesSold;
+            }
+
+            set
+            {
+                policiesSold = value;
+            }
+        }
+
         public double totalComm()
         {
             return 0;
