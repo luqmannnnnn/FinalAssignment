@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace AOOAD_FinalAssignment
 {
-    class Policy
+    class Policy : Subject
     {
+        //For observer pattern
+        private List<Observer> observers;
+
         private int pNo;
         private string pTC;
         private string premimumType;
@@ -93,11 +96,39 @@ namespace AOOAD_FinalAssignment
             }
         }
 
+        //For Observer Pattern
+        public void registerObserver(Observer o)
+        {
+            observers.Add(o);
+        }
+
+        public void removeObserver (Observer o)
+        {
+            observers.Remove(i);
+        }
+
+        public void notifyObservers()
+        {
+            foreach (Observer o in observers)
+            {
+                o.update(policy);
+            }
+        }
+
+        public void payOutstandingPayments()
+        {
+            notifyObservers();
+        }
+
         //int payOut
 
         public void addRider()
         {
-
+            //Add riders
         }
+
+
+
+
     }
 }

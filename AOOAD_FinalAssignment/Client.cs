@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace AOOAD_FinalAssignment
 {
-    class Client
+    class Client: Observer
     {
+        //For Observer pattern
+        private Subject policy;
+
         private int cAccNo;
         private string cName;
         private string cAddress;
@@ -82,5 +85,18 @@ namespace AOOAD_FinalAssignment
             CName = cn;
             CAddress = ca;
         }
+        
+        //For Observer Pattern
+        public Client (Subject p)
+        {
+            this.policy = p;
+            policy.registerObserver(this);
+        }
+
+        public void update(string policy)
+        {
+
+        }
     }
+
 }

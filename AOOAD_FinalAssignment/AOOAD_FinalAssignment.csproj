@@ -45,11 +45,13 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="Observer.cs" />
     <Compile Include="Policy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Receipt.cs" />
     <Compile Include="Rider.cs" />
+    <Compile Include="Subject.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
