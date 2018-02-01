@@ -14,7 +14,7 @@ namespace AOOAD_FinalAssignment
 
         public double totalComm()
         {
-
+            return 0;
         }
     }
 }

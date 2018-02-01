@@ -14,5 +14,73 @@ namespace AOOAD_FinalAssignment
         private string policyType;
         private string paymentMode;
 
+        public int CAccNo
+        {
+            get
+            {
+                return cAccNo;
+            }
+
+            set
+            {
+                cAccNo = value;
+            }
+        }
+        public string CName
+        {
+            get
+            {
+                return cName;
+            }
+
+            set
+            {
+                cName = value;
+            }
+        }
+        public string CAddress
+        {
+            get
+            {
+                return cAddress;
+            }
+
+            set
+            {
+                cAddress = value;
+            }
+        }
+        public string PolicyType
+        {
+            get
+            {
+                return policyType;
+            }
+
+            set
+            {
+                policyType = value;
+            }
+        }
+        public string PaymentMode
+        {
+            get
+            {
+                return paymentMode;
+            }
+
+            set
+            {
+                paymentMode = value;
+            }
+        }
+
+        public Client() { }
+        public Client(int can,string cn,string ca,string pt, string pm)
+        {
+            CAccNo = can;
+            CName = cn;
+            CAddress = ca;
+        }
     }
 }

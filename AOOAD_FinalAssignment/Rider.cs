@@ -11,5 +11,44 @@ namespace AOOAD_FinalAssignment
         private string riderName;
         private string riderDesc;
         private int rPremiumPrice;
+
+        public string RiderName
+        {
+            get
+            {
+                return riderName;
+            }
+
+            set
+            {
+                riderName = value;
+            }
+        }
+
+        public string RiderDesc
+        {
+            get
+            {
+                return riderDesc;
+            }
+
+            set
+            {
+                riderDesc = value;
+            }
+        }
+
+        public int RPremiumPrice
+        {
+            get
+            {
+                return rPremiumPrice;
+            }
+
+            set
+            {
+                rPremiumPrice = value;
+            }
+        }
     }
 }
