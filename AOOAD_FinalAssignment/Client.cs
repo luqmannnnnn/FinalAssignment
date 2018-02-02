@@ -79,7 +79,7 @@ namespace AOOAD_FinalAssignment
         }
 
         public Client() { }
-        public Client(int can,string cn,string ca,string pt, string pm)
+        public Client(int can,string cn,string ca)
         {
             CAccNo = can;
             CName = cn;
