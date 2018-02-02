@@ -73,7 +73,7 @@ namespace AOOAD_FinalAssignment
                         Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate.ToString("dd/MM/yyyy"), newPolicyList[i].EndDate.ToString("dd/MM/yyyy"));
                             
                           
-                            }
+                    }
 
                 }
 
@@ -89,7 +89,7 @@ namespace AOOAD_FinalAssignment
 
                 else if (userOption == 4)
                 {
-                    
+                    DisplayOutstandingPayments(clientList);
                 }
 
                 else if (userOption == 0)
@@ -110,6 +110,26 @@ namespace AOOAD_FinalAssignment
             Console.WriteLine("4. View Outstanding Insurance Preimums");
             Console.WriteLine("0. Exit the Program");
             Console.WriteLine("-----------------------------------------------------");
+        }
+
+        static void DisplayOutstandingPayments(List<Client> clientList)
+        {
+            Console.WriteLine("-------------View Outstanding Insurance Premiums------------");
+            Console.WriteLine("Enter Account Number:");
+            int userAccNo = Convert.ToInt32(Console.ReadLine());
+
+            //Display Client Details
+            for (int i = 0; i < clientList.Count; i++)
+            {
+                if (userAccNo == clientList[i].CAccNo)
+                {
+                    Console.WriteLine("{0,-5} {1,-20} {2,-30}", "ID:", "Name:", "Address");
+                    Console.WriteLine("{0,-5} {1,-20} {2,-30}", clientList[i].CAccNo, clientList[i].CName, clientList[i].CAddress);
+                }
+            }
+
+
+
         }
     }
 }
