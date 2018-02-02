@@ -30,10 +30,12 @@ namespace AOOAD_FinalAssignment
         private List<Observer> observers;
 
         protected PayOutMethod payOutMethod;
+        private string pName;
         private int pNo;
         private string pTC;
         private string premimumType;
         private double premiumPrice;
+        private string cName;
         private DateTime startDate;
         private DateTime endDate;
 
@@ -52,7 +54,6 @@ namespace AOOAD_FinalAssignment
                 pNo = value;
             }
         }
-
         public string PTC
         {
             get
@@ -65,7 +66,6 @@ namespace AOOAD_FinalAssignment
                 pTC = value;
             }
         }
-
         public string PremimumType
         {
             get
@@ -112,11 +112,46 @@ namespace AOOAD_FinalAssignment
                 endDate = value;
             }
         }
-
-        //For Observer Pattern
-        public Policy()
+        public string PName
         {
+            get
+            {
+                return pName;
+            }
+
+            set
+            {
+                pName = value;
+            }
+        }
+
+        public string CName
+        {
+            get
+            {
+                return c.CName;
+            }
+
+            set
+            {
+                c.CName = value;
+            }
+        }
+
+        Client c = new Client();
+
+        public Policy(int pno, string pname, string cname, DateTime sd, DateTime ed)
+        {
+            PNo = pno;
+            PName = pname;
+            CName = cname;
+            StartDate = sd;
+            EndDate = ed;
+        }
+        //For Observer Pattern
+        public Policy(){
             observers = new List<Observer>();       
+
         }
 
         public void registerObserver(Observer o)
@@ -126,14 +161,14 @@ namespace AOOAD_FinalAssignment
 
         public void removeObserver (Observer o)
         {
-            observers.Remove(i);
+            //observers.Remove(i);
         }
 
         public void notifyObservers()
         {
             foreach (Observer o in observers)
             {
-                o.update(policy);
+              //  o.update(policy);
             }
         }
 
@@ -149,24 +184,45 @@ namespace AOOAD_FinalAssignment
             //Add riders
         }
     }
-    class Medical: Policy
+
+    class newPolicy : Policy
+    {
+       
+    }
+
+    class Medical : Policy
     {
         public Medical()
         {
+            PNo = 0;
+
+            PName = "Medical Insurance";
+            PTC = "This insurance covers only one traveller and in not refunadable";
+            PremimumType = "Periodic Payment: Monthly";
+            PremiumPrice = 134;
             payOutMethod = new Injury();
         }
     }
-     class Car: Policy
+    class Car: Policy
     {
-        public Car()
-        {
+        public Car() {
+            PNo = 0;
+            PName = "Car Insurance";
+            PTC = "This insurance covers only one car and in not refunadable";
+            PremimumType = "Periodic Payment: Yearly";
+            PremiumPrice = 1470;
             payOutMethod = new Maturity();
         }
     }
     class Travel: Policy
     {
-        public Travel()
-        {
+      
+        public Travel() {
+            PNo = 0;
+            PName = "Travel Insurance";
+            PTC = "This insurance covers only one traveller and is not refunadable";
+            PremimumType = "One Time Payment";
+            PremiumPrice = 57.90;
             payOutMethod = new Maturity();
         }
     }

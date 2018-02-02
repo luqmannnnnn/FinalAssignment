@@ -10,17 +10,71 @@ namespace AOOAD_FinalAssignment
     {
         static void Main(string[] args)
         {
-            //Display Choice Menu
-            DisplayMenu();
+
+            List<Client> clientList = new List<Client>();
+            List<Policy> policyList = new List<Policy>();
+            List<Policy> newPolicyList = new List<Policy>();
+            
+
+            clientList.Add(new Client(001, "Tan Kah Kee", "15 Bedok North Road Singapore: 130355"));
+            clientList.Add(new Client(002, "Ahmad Ibrahim", "BLK 33 Tech Whye Lane Singapore: 4020333"));
+            clientList.Add(new Client(003, "Saravanan T.", "BLK 21 Jalan Bukit Merah Singapore: 521421"));
+
+            policyList.Add(new Travel());
+            policyList.Add(new Medical());
+            policyList.Add(new Car());
+
+           
 
             while (true)
             {
-                Console.WriteLine("Enter Your Option: ");
+                //Display Choice Menu
+                DisplayMenu();
+                Console.Write("Enter Your Option: ");
                 int userOption = Convert.ToInt32(Console.ReadLine());
 
                 if (userOption == 1)
                 {
-                    
+                    //Display available policies
+                    Console.WriteLine("\n- Available Policies: ");
+                    for (int i = 0; i < policyList.Count; i++)
+                    {
+                        Console.WriteLine("{0}. {1}",i+1, policyList[i].PName);
+                    }
+                    Console.Write("\nSelect Policy: ");
+                    int policyIndex = Convert.ToInt32(Console.ReadLine())-1;
+
+                    //Display existing clients
+                    Console.WriteLine("\n- Existing Clients: ");
+                    Console.WriteLine("{0,-5} {1,-20} {2,-30}", "ID:", "Name:", "Address");
+                    for (int i = 0; i < clientList.Count; i++)
+                    {                 
+                        Console.WriteLine("{0,-5} {1,-20} {2,-30}", clientList[i].CAccNo, clientList[i].CName, clientList[i].CAddress);
+                    }
+                    Console.Write("\nSelect Existing Client: ");
+                    int clientIndex = Convert.ToInt32(Console.ReadLine())-1;
+
+                    //Enter Start date:
+                    Console.Write("\nEnter Start Date(MM/dd/yyyy): ");
+                    DateTime startDate = DateTime.Parse(Console.ReadLine());
+
+
+                    //Enter end date:
+                    Console.Write("\nEnter End Date(MM/dd/yyyy): ");
+                    DateTime endDate = DateTime.Parse(Console.ReadLine());
+
+                    int nplIndex = newPolicyList.Count;
+                    newPolicyList.Add(new Policy(nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate, endDate));
+                    Console.WriteLine("\nSummary:\n{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}", nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate.ToString("dd/MM/yyyy"), endDate.ToString("dd/MM/yyyy"));
+
+                    Console.WriteLine("\t-----");
+                    for (int i = 0; i < newPolicyList.Count; i++)
+                    {
+                        Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate.ToString("dd/MM/yyyy"), newPolicyList[i].EndDate.ToString("dd/MM/yyyy"));
+                            
+                          
+                            }
+
                 }
 
                 else if (userOption == 2)
