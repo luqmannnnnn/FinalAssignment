@@ -95,7 +95,7 @@ namespace AOOAD_FinalAssignment
             {
                 return startDate;
             }
-            set
+              set
             {
                 startDate = value;
             }
