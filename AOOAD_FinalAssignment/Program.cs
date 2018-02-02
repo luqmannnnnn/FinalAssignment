@@ -114,6 +114,7 @@ namespace AOOAD_FinalAssignment
 
         static void DisplayOutstandingPayments(List<Client> clientList)
         {
+            //View Oustanding Insurance Premiums
             Console.WriteLine("-------------View Outstanding Insurance Premiums------------");
             Console.WriteLine("Enter Account Number:");
             int userAccNo = Convert.ToInt32(Console.ReadLine());
@@ -127,6 +128,40 @@ namespace AOOAD_FinalAssignment
                     Console.WriteLine("{0,-5} {1,-20} {2,-30}", clientList[i].CAccNo, clientList[i].CName, clientList[i].CAddress);
                 }
             }
+
+            //Promopt Insurance End-Date
+            Console.WriteLine("Please Enter Insurance End-Date (DD/MM/YYYY): ");
+            DateTime insuranceEndDate = Convert.ToDateTime(Console.ReadLine());
+
+            //System Checks if the Payment is Overdue
+            if (DateTime.Now > insuranceEndDate)
+            {
+                Console.WriteLine("You have an Oustanding Payment. Please pay using a Credit Card");
+
+                Console.WriteLine("Enter Full Name on Credit Card: ");
+                string userCreditName = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Enter Credit Card Number: ");
+                string userCreditNo = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Enter Expiry Date: ");
+                string userCreditExpiry = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Enter Security Code: ");
+                string userCreditCode = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Enter Pin: ");
+                string userCreditPin = Convert.ToString(Console.ReadLine());
+
+
+            }
+
+            else
+            {
+                Console.WriteLine("You have no Outstanding Payments. Thank You");
+            }
+      
+            
 
 
 
