@@ -80,6 +80,7 @@ namespace AOOAD_FinalAssignment
 
                 else if (userOption == 2)
                 {
+                    editPolicy(newPolicyList);
 
 
                 }
