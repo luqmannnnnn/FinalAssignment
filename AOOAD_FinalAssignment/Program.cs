@@ -24,7 +24,7 @@ namespace AOOAD_FinalAssignment
             policyList.Add(new Travel());
             policyList.Add(new Medical());
             policyList.Add(new Car());
-            
+
             while (true)
             {
                 //Display Choice Menu
@@ -213,9 +213,6 @@ namespace AOOAD_FinalAssignment
 
                             }
 
-
-
-
                         }
 
 
@@ -227,10 +224,11 @@ namespace AOOAD_FinalAssignment
                     }
                 }
             }
-            }
-        
+        }
+
+
         //Option 3
-       /* static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
+        static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
         {
             //View Oustanding Insurance Premiums
             Console.WriteLine("-------------View Outstanding Insurance Premiums------------");
@@ -280,9 +278,9 @@ namespace AOOAD_FinalAssignment
             {
                 Console.WriteLine("You have no Outstanding Payments. Thank You");
             }
-
-
-        }*/
+        }
+    }
+}
         
    
 
