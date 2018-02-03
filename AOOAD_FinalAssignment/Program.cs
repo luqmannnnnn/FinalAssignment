@@ -127,7 +127,7 @@ namespace AOOAD_FinalAssignment
                 Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}{5,-10}", "Policy No: ", " Policy Name: ", "Client Name: ", "Start Date: ", "End Date: ", "Price: ");
                 Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20} {5,-10}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate, newPolicyList[i].EndDate, newPolicyList[i].PremiumPrice);
 
-            //
+                //
                 Console.Write("Please enter account number to edit: ");
                 int accountNo = Convert.ToInt32(Console.ReadLine());
 
@@ -135,35 +135,35 @@ namespace AOOAD_FinalAssignment
                 //Edit Account
                 if (accountNo == newPolicyList[i].PNo)
                 { }
-                    while (true)
+                while (true)
+                {
+                    Console.WriteLine("------------- What would you like to edit?--------------");
+                    Console.WriteLine("1. Edit Policy Name");
+                    Console.WriteLine("2. Edit Policy Start Date");
+                    Console.WriteLine("3. Edit Policy End Date");
+                    Console.WriteLine("0. Back to Main Menu ");
+                    Console.WriteLine("----------------------------------------------------------");
+
+                    Console.Write("Please enter option No. : ");
+                    int optionNo = Convert.ToInt32(Console.ReadLine());
+
+                    if (optionNo == 1)
                     {
-                        Console.WriteLine("------------- What would you like to edit?--------------");
-                        Console.WriteLine("1. Edit Policy Name");
-                        Console.WriteLine("2. Edit Policy Start Date");
-                        Console.WriteLine("3. Edit Policy End Date");
-                        Console.WriteLine("0. Back to Main Menu ");
-                        Console.WriteLine("----------------------------------------------------------");
 
+                        //List of policies to choose from to change
+                        Console.WriteLine("1. Travel Insurance Policy");
+                        Console.WriteLine("2. Medical Insurance Policy");
+                        Console.WriteLine("3. Car Insurance Policy");
+
+                        //Prompt user for option number
                         Console.Write("Please enter option No. : ");
-                        int optionNo = Convert.ToInt32(Console.ReadLine());
 
-                        if (optionNo == 1)
+                        int newPol = Convert.ToInt32(Console.ReadLine());
+
+
+                        if (newPol == 1)
                         {
-
-                            //List of policies to choose from to change
-                            Console.WriteLine("1. Travel Insurance Policy");
-                            Console.WriteLine("2. Medical Insurance Policy");
-                            Console.WriteLine("3. Car Insurance Policy");
-
-                            //Prompt user for option number
-                            Console.Write("Please enter option No. : ");
-
-                            int newPol = Convert.ToInt32(Console.ReadLine());
-
-
-                            if (newPol == 1)
-                            {
-                                newPolicyList[accountNo].PName = "Travel Insurance EDITED";
+                            newPolicyList[accountNo].PName = "Travel Insurance EDITED";
                             for (int j = 0; i < newPolicyList.Count; i++)
                             {
                                 Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20} {5,-20}", newPolicyList[j].PNo, newPolicyList[j].PName, newPolicyList[j].CName, newPolicyList[j].StartDate.ToString("dd/MM/yyyy"), newPolicyList[j].EndDate.ToString("dd/MM/yyyy"), newPolicyList[j].PremiumPrice);
@@ -173,41 +173,41 @@ namespace AOOAD_FinalAssignment
 
                         }
 
-                            else if (newPol == 2)
-                            {
-
-                            }
-
-                            else if (newPol == 3)
-                            {
-
-                            }
-
-
-                        }
-
-                        else if (optionNo == 2)
+                        else if (newPol == 2)
                         {
 
                         }
 
-                        else if (optionNo == 3)
+                        else if (newPol == 3)
                         {
 
                         }
 
-                        else if (optionNo == 0)
-                        {
-                            break;
-                        }
 
                     }
+
+                    else if (optionNo == 2)
+                    {
+
+                    }
+
+                    else if (optionNo == 3)
+                    {
+
+                    }
+
+                    else if (optionNo == 0)
+                    {
+                        break;
+                    }
+
                 }
             }
-            }
-        
+        }
+
+
         //Option 3
-       /* static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
+        static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
         {
             //View Oustanding Insurance Premiums
             Console.WriteLine("-------------View Outstanding Insurance Premiums------------");
@@ -259,7 +259,8 @@ namespace AOOAD_FinalAssignment
             }
 
 
-        }*/
         }
+    }
+}
    
 
