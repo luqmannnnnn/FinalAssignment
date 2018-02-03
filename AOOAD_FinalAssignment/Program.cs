@@ -135,14 +135,14 @@ namespace AOOAD_FinalAssignment
                 //Edit Account
                 if (accountNo == newPolicyList[i].PNo)
                 { }
-                while (true)
-                {
-                    Console.WriteLine("------------- What would you like to edit?--------------");
-                    Console.WriteLine("1. Edit Policy Name");
-                    Console.WriteLine("2. Edit Policy Start Date");
-                    Console.WriteLine("3. Edit Policy End Date");
-                    Console.WriteLine("0. Back to Main Menu ");
-                    Console.WriteLine("----------------------------------------------------------");
+                    while (true)
+                    {
+                        Console.WriteLine("------------- What would you like to edit?--------------");
+                        Console.WriteLine("1. Edit Policy Name");
+                        Console.WriteLine("2. Edit Policy Start Date");
+                        Console.WriteLine("3. Edit Policy End Date");
+                        Console.WriteLine("0. Back to Main Menu ");
+                        Console.WriteLine("----------------------------------------------------------");
 
                     Console.Write("Please enter option No. : ");
                     int optionNo = Convert.ToInt32(Console.ReadLine());
@@ -161,51 +161,51 @@ namespace AOOAD_FinalAssignment
                         int newPol = Convert.ToInt32(Console.ReadLine());
 
 
-                        if (newPol == 1)
-                        {
-                            newPolicyList[accountNo].PName = "Travel Insurance EDITED";
+                            if (newPol == 1)
+                            {
+                                newPolicyList[accountNo].PName = "Travel Insurance EDITED";
                             for (int j = 0; i < newPolicyList.Count; i++)
                             {
                                 Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20} {5,-20}", newPolicyList[j].PNo, newPolicyList[j].PName, newPolicyList[j].CName, newPolicyList[j].StartDate.ToString("dd/MM/yyyy"), newPolicyList[j].EndDate.ToString("dd/MM/yyyy"), newPolicyList[j].PremiumPrice);
 
 
+                                }
+
+                        }
+
+                            else if (newPol == 2)
+                            {
+
                             }
 
+                            else if (newPol == 3)
+                            {
+
+                            }
+
+
                         }
 
-                        else if (newPol == 2)
+                        else if (optionNo == 2)
                         {
 
                         }
 
-                        else if (newPol == 3)
+                        else if (optionNo == 3)
                         {
 
                         }
 
+                        else if (optionNo == 0)
+                        {
+                            break;
+                        }
 
                     }
-
-                    else if (optionNo == 2)
-                    {
-
-                    }
-
-                    else if (optionNo == 3)
-                    {
-
-                    }
-
-                    else if (optionNo == 0)
-                    {
-                        break;
-                    }
-
                 }
             }
-        }
-
-
+            }
+        
         //Option 3
         static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
         {
@@ -259,8 +259,7 @@ namespace AOOAD_FinalAssignment
             }
 
 
+        }*/
         }
-    }
-}
    
 
