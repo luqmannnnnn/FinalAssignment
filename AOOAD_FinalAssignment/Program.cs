@@ -79,6 +79,7 @@ namespace AOOAD_FinalAssignment
 
                 else if (userOption == 2)
                 {
+
                
                 }
 
@@ -162,6 +163,19 @@ namespace AOOAD_FinalAssignment
             }
       
             
+      
+            
+
+
+
+        }
+        //Code to edit policy
+        static void editPolicy(List<Policy> newPolicyList )
+        {
+            //Prompt user to enter account number to edit
+            Console.WriteLine("Please enter account number to edit: ");
+            int accountNo = Convert.ToInt32(Console.ReadLine());
+
 
 
 
