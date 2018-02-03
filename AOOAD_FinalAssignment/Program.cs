@@ -85,12 +85,12 @@ namespace AOOAD_FinalAssignment
 
                 else if (userOption == 3)
                 {
-                    
+                    DisplayOutstandingPayments(clientList, receiptList);
                 }
 
                 else if (userOption == 4)
                 {
-                    DisplayOutstandingPayments(clientList);
+                    
                 }
 
                 else if (userOption == 0)
@@ -107,8 +107,8 @@ namespace AOOAD_FinalAssignment
             Console.WriteLine("------------- Welcome to Provident Life--------------");
             Console.WriteLine("1. Create Insurance Policy");
             Console.WriteLine("2. Edit Existing Policy");
-            Console.WriteLine("3. Send an Email Alert");
-            Console.WriteLine("4. View Outstanding Insurance Preimums");
+            Console.WriteLine("3. View Outstanding Insurance Preimums");
+            Console.WriteLine("4. Send Email Alert");
             Console.WriteLine("0. Exit the Program");
             Console.WriteLine("-----------------------------------------------------");
         }
