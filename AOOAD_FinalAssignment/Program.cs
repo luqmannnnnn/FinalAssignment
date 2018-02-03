@@ -209,7 +209,7 @@ namespace AOOAD_FinalAssignment
                     }
                 }
             }
-            }
+            }  
         
         //Option 3
         static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
