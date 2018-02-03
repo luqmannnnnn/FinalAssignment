@@ -25,8 +25,6 @@ namespace AOOAD_FinalAssignment
             policyList.Add(new Medical());
             policyList.Add(new Car());
 
-
-
             while (true)
             {
                 //Display Choice Menu
@@ -114,6 +112,7 @@ namespace AOOAD_FinalAssignment
             Console.WriteLine("0. Exit the Program");
             Console.WriteLine("-----------------------------------------------------");
         }
+
         //Option 2
         static void editPolicy(List<Policy> newPolicyList)
         {
@@ -125,8 +124,8 @@ namespace AOOAD_FinalAssignment
             //Display Client Details
             for (int i = 0; i < newPolicyList.Count; i++)
             {
-                Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}", "Policy No: ", " Policy Name: ", "Client Name: ", "Start Date: ", "End Date: ", "Price: ");
-                Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate, newPolicyList[i].EndDate, newPolicyList[i].PremiumPrice);
+                Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}{5,-10}", "Policy No: ", " Policy Name: ", "Client Name: ", "Start Date: ", "End Date: ", "Price: ");
+                Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20} {5,-10}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate, newPolicyList[i].EndDate, newPolicyList[i].PremiumPrice);
 
             
                 Console.Write("Please enter account number to edit: ");
@@ -135,9 +134,7 @@ namespace AOOAD_FinalAssignment
 
                 //Edit Account
                 if (accountNo == newPolicyList[i].PNo)
-                {
-
-
+                { }
                     while (true)
                     {
                         Console.WriteLine("------------- What would you like to edit?--------------");
@@ -166,9 +163,15 @@ namespace AOOAD_FinalAssignment
 
                             if (newPol == 1)
                             {
-                                newPolicyList[accountNo].PName = "Travel Insurance";
+                                newPolicyList[accountNo].PName = "Travel Insurance EDITED";
+                            for (int j = 0; i < newPolicyList.Count; i++)
+                            {
+                                Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20} {5,-20}", newPolicyList[j].PNo, newPolicyList[j].PName, newPolicyList[j].CName, newPolicyList[j].StartDate.ToString("dd/MM/yyyy"), newPolicyList[j].EndDate.ToString("dd/MM/yyyy"), newPolicyList[j].PremiumPrice);
+
 
                             }
+
+                        }
 
                             else if (newPol == 2)
                             {
@@ -202,21 +205,9 @@ namespace AOOAD_FinalAssignment
                 }
             }
             }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
+        
         //Option 3
-        static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
+       /* static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
         {
             //View Oustanding Insurance Premiums
             Console.WriteLine("-------------View Outstanding Insurance Premiums------------");
@@ -268,7 +259,7 @@ namespace AOOAD_FinalAssignment
             }
 
 
+        }*/
         }
-        }
-    }
+   
 
