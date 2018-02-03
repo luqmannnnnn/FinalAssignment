@@ -14,6 +14,7 @@ namespace AOOAD_FinalAssignment
             List<Client> clientList = new List<Client>();
             List<Policy> policyList = new List<Policy>();
             List<Policy> newPolicyList = new List<Policy>();
+            List<Receipt> receiptList = new List<Receipt>();
             
 
             clientList.Add(new Client(001, "Tan Kah Kee", "15 Bedok North Road Singapore: 130355"));
@@ -64,13 +65,13 @@ namespace AOOAD_FinalAssignment
                     DateTime endDate = DateTime.Parse(Console.ReadLine());
 
                     int nplIndex = newPolicyList.Count;
-                    newPolicyList.Add(new Policy(nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate, endDate));
-                    Console.WriteLine("\nSummary:\n{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}", nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate.ToString("dd/MM/yyyy"), endDate.ToString("dd/MM/yyyy"));
+                    newPolicyList.Add(new Policy(nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate, endDate, policyList[policyIndex].PremiumPrice));
+                    Console.WriteLine("\nSummary:\n{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}", nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate.ToString("dd/MM/yyyy"), endDate.ToString("dd/MM/yyyy"), policyList[policyIndex].PremiumPrice);
 
                     Console.WriteLine("\t-----");
                     for (int i = 0; i < newPolicyList.Count; i++)
                     {
-                        Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate.ToString("dd/MM/yyyy"), newPolicyList[i].EndDate.ToString("dd/MM/yyyy"));
+                        Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}, {5,-20}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate.ToString("dd/MM/yyyy"), newPolicyList[i].EndDate.ToString("dd/MM/yyyy"), newPolicyList[i].PremiumPrice);
                             
                           
                     }
@@ -79,18 +80,18 @@ namespace AOOAD_FinalAssignment
 
                 else if (userOption == 2)
                 {
-
+               
                
                 }
 
                 else if (userOption == 3)
                 {
-                    
+                    DisplayOutstandingPayments(clientList, receiptList);
                 }
 
                 else if (userOption == 4)
                 {
-                    DisplayOutstandingPayments(clientList);
+                    
                 }
 
                 else if (userOption == 0)
@@ -106,14 +107,14 @@ namespace AOOAD_FinalAssignment
         {
             Console.WriteLine("------------- Welcome to Provident Life--------------");
             Console.WriteLine("1. Create Insurance Policy");
-            Console.WriteLine("2. Edit Exisiting Policy");
-            Console.WriteLine("3. Send an Email Alert");
-            Console.WriteLine("4. View Outstanding Insurance Preimums");
+            Console.WriteLine("2. Edit Existing Policy");
+            Console.WriteLine("3. View Outstanding Insurance Preimums");
+            Console.WriteLine("4. Send Email Alert");
             Console.WriteLine("0. Exit the Program");
             Console.WriteLine("-----------------------------------------------------");
         }
 
-        static void DisplayOutstandingPayments(List<Client> clientList)
+        static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
         {
             //View Oustanding Insurance Premiums
             Console.WriteLine("-------------View Outstanding Insurance Premiums------------");
@@ -155,6 +156,8 @@ namespace AOOAD_FinalAssignment
                 string userCreditPin = Convert.ToString(Console.ReadLine());
 
 
+
+
             }
 
             else
@@ -163,19 +166,6 @@ namespace AOOAD_FinalAssignment
             }
       
             
-      
-            
-
-
-
-        }
-        //Code to edit policy
-        static void editPolicy(List<Policy> newPolicyList )
-        {
-            //Prompt user to enter account number to edit
-            Console.WriteLine("Please enter account number to edit: ");
-            int accountNo = Convert.ToInt32(Console.ReadLine());
-
 
 
 
