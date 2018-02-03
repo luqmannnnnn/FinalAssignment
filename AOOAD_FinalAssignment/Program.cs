@@ -10,16 +10,17 @@ namespace AOOAD_FinalAssignment
     {
         static void Main(string[] args)
         {
-
+            //List
             List<Client> clientList = new List<Client>();
             List<Policy> policyList = new List<Policy>();
             List<Policy> newPolicyList = new List<Policy>();
             
-
+            //Clients Objects
             clientList.Add(new Client(001, "Tan Kah Kee", "15 Bedok North Road Singapore: 130355"));
             clientList.Add(new Client(002, "Ahmad Ibrahim", "BLK 33 Tech Whye Lane Singapore: 4020333"));
             clientList.Add(new Client(003, "Saravanan T.", "BLK 21 Jalan Bukit Merah Singapore: 521421"));
-
+        
+            //Policies Objects
             policyList.Add(new Travel());
             policyList.Add(new Medical());
             policyList.Add(new Car());
