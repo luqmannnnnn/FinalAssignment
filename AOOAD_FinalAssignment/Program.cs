@@ -206,7 +206,7 @@ namespace AOOAD_FinalAssignment
                                 DateTime newEndDate = Convert.ToDateTime(Console.ReadLine());
 
                                 newPolicyList[accountNo].EndDate = newEndDate;
-                                for (int j = 0; i < newPolicyList.Count; i++)
+                                for (int j = 0; j < newPolicyList.Count; j++)
                                 {
                                     Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20} {5,-20}", newPolicyList[j].PNo, newPolicyList[j].PName, newPolicyList[j].CName, newPolicyList[j].StartDate.ToString("dd/MM/yyyy"), newPolicyList[j].EndDate.ToString("dd/MM/yyyy"), newPolicyList[j].PremiumPrice);
 
