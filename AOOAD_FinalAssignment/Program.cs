@@ -127,20 +127,19 @@ namespace AOOAD_FinalAssignment
                 Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}{5,-10}", "Policy No: ", " Policy Name: ", "Client Name: ", "Start Date: ", "End Date: ", "Price: ");
                 Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20} {5,-10}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate, newPolicyList[i].EndDate, newPolicyList[i].PremiumPrice);
 
-            //
+                //
                 Console.Write("Please enter account number to edit: ");
                 int accountNo = Convert.ToInt32(Console.ReadLine());
 
 
                 //Edit Account
                 if (accountNo == newPolicyList[i].PNo)
-                { }
+                {
                     while (true)
                     {
                         Console.WriteLine("------------- What would you like to edit?--------------");
                         Console.WriteLine("1. Edit Policy Name");
-                        Console.WriteLine("2. Edit Policy Start Date");
-                        Console.WriteLine("3. Edit Policy End Date");
+                        Console.WriteLine("2. Edit Policy End Date");
                         Console.WriteLine("0. Back to Main Menu ");
                         Console.WriteLine("----------------------------------------------------------");
 
@@ -164,47 +163,74 @@ namespace AOOAD_FinalAssignment
                             if (newPol == 1)
                             {
                                 newPolicyList[accountNo].PName = "Travel Insurance EDITED";
-                            for (int j = 0; i < newPolicyList.Count; i++)
-                            {
-                                Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20} {5,-20}", newPolicyList[j].PNo, newPolicyList[j].PName, newPolicyList[j].CName, newPolicyList[j].StartDate.ToString("dd/MM/yyyy"), newPolicyList[j].EndDate.ToString("dd/MM/yyyy"), newPolicyList[j].PremiumPrice);
+                                for (int j = 0; i < newPolicyList.Count; i++)
+                                {
+                                    Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20} {5,-20}", newPolicyList[j].PNo, newPolicyList[j].PName, newPolicyList[j].CName, newPolicyList[j].StartDate.ToString("dd/MM/yyyy"), newPolicyList[j].EndDate.ToString("dd/MM/yyyy"), newPolicyList[j].PremiumPrice);
 
+
+                                }
 
                             }
-
-                        }
-
+                            //Trouble displaying needs fixing
                             else if (newPol == 2)
                             {
 
+                                newPolicyList[accountNo].PName = "Medical Insurance EDITED";
+                                for (int j = 0; i < newPolicyList.Count; i++)
+                                {
+                                    Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20} {5,-20}", newPolicyList[j].PNo, newPolicyList[j].PName, newPolicyList[j].CName, newPolicyList[j].StartDate.ToString("dd/MM/yyyy"), newPolicyList[j].EndDate.ToString("dd/MM/yyyy"), newPolicyList[j].PremiumPrice);
+
+
+                                }
                             }
 
+                            //Trouble displaying needs fixing
                             else if (newPol == 3)
                             {
+                                newPolicyList[accountNo].PName = "Car Insurance EDITED";
+                                for (int j = 0; i < newPolicyList.Count; i++)
+                                {
+                                    Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20} {5,-20}", newPolicyList[j].PNo, newPolicyList[j].PName, newPolicyList[j].CName, newPolicyList[j].StartDate.ToString("dd/MM/yyyy"), newPolicyList[j].EndDate.ToString("dd/MM/yyyy"), newPolicyList[j].PremiumPrice);
+
+
+                                }
+                            }
+
+
+
+                            else if (optionNo == 2)
+                            {
+
+                                Console.WriteLine("Current End Date: {0, -5}", newPolicyList[accountNo].EndDate);
+                                Console.Write("Enter new End Date: ");
+                                DateTime newEndDate = Convert.ToDateTime(Console.ReadLine());
+
+                                newPolicyList[accountNo].EndDate = newEndDate;
+                                for (int j = 0; i < newPolicyList.Count; i++)
+                                {
+                                    Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20} {5,-20}", newPolicyList[j].PNo, newPolicyList[j].PName, newPolicyList[j].CName, newPolicyList[j].StartDate.ToString("dd/MM/yyyy"), newPolicyList[j].EndDate.ToString("dd/MM/yyyy"), newPolicyList[j].PremiumPrice);
+
+
+                                }
+
+
+
 
                             }
 
 
-                        }
-
-                        else if (optionNo == 2)
-                        {
-
-                        }
-
-                        else if (optionNo == 3)
-                        {
+                            else if (optionNo == 0)
+                            {
+                                break;
+                            }
 
                         }
-
-                        else if (optionNo == 0)
-                        {
-                            break;
-                        }
-
                     }
                 }
             }
-            }
+        }
+    }
+}
         
         //Option 3
        /* static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
@@ -260,6 +286,6 @@ namespace AOOAD_FinalAssignment
 
 
         }*/
-        }
+        
    
 
