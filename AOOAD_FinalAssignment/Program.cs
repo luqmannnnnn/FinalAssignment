@@ -66,8 +66,9 @@ namespace AOOAD_FinalAssignment
                     DateTime endDate = DateTime.Parse(Console.ReadLine());
 
                     int nplIndex = newPolicyList.Count;
-                    newPolicyList.Add(new Policy(nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate, endDate, policyList[policyIndex].PremiumPrice));
-                    Console.WriteLine("\nSummary:\n{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}", nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate.ToString("dd/MM/yyyy"), endDate.ToString("dd/MM/yyyy"), policyList[policyIndex].PremiumPrice);
+                    newPolicyList.Add(new Policy(nplIndex, policyList[policyIndex]
+                        .PName, clientList[clientIndex].CName, startDate, endDate, policyList[policyIndex].PremiumPrice));
+                    Console.WriteLine("\nSummary:\n{0,-5} {1,-20} {2,-20} {3,-20} {4,-20} {5,-20}", nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate.ToString("dd/MM/yyyy"), endDate.ToString("dd/MM/yyyy"), policyList[policyIndex].PremiumPrice);
 
                     Console.WriteLine("\t-----");
                     for (int i = 0; i < newPolicyList.Count; i++)
