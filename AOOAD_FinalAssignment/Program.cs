@@ -121,82 +121,86 @@ namespace AOOAD_FinalAssignment
 
             //Prompt to enter which account to edit
             Console.WriteLine("-----------Edit Existing Policy----------");
-            Console.Write("Please enter account number to edit: ");
-            int accountNo = Convert.ToInt32(Console.ReadLine());
 
             //Display Client Details
             for (int i = 0; i < newPolicyList.Count; i++)
             {
-                if (accountNo == newPolicyList[i].PNo)
-                {
-                    Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}", "Policy No: ", " Policy Name: ", "Client Name: ", "Start Date: ", "End Date: ", "Price: ");
-                    Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate, newPolicyList[i].EndDate, newPolicyList[i].PremiumPrice);
+                Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}", "Policy No: ", " Policy Name: ", "Client Name: ", "Start Date: ", "End Date: ", "Price: ");
+                Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate, newPolicyList[i].EndDate, newPolicyList[i].PremiumPrice);
 
-                }
+            
+                Console.Write("Please enter account number to edit: ");
+                int accountNo = Convert.ToInt32(Console.ReadLine());
+
 
                 //Edit Account
-                while (true)
+                if (accountNo == newPolicyList[i].PNo)
                 {
-                    Console.WriteLine("------------- What would you like to edit?--------------");
-                    Console.WriteLine("1. Edit Policy Name");
-                    Console.WriteLine("2. Edit Policy Start Date");
-                    Console.WriteLine("3. Edit Policy End Date");
-                    Console.WriteLine("0. Back to Main Menu ");
-                    Console.WriteLine("----------------------------------------------------------");
 
-                    Console.Write("Please enter option No. : ");
-                    int optionNo = Convert.ToInt32(Console.ReadLine());
 
-                    if (optionNo == 1)
+                    while (true)
                     {
+                        Console.WriteLine("------------- What would you like to edit?--------------");
+                        Console.WriteLine("1. Edit Policy Name");
+                        Console.WriteLine("2. Edit Policy Start Date");
+                        Console.WriteLine("3. Edit Policy End Date");
+                        Console.WriteLine("0. Back to Main Menu ");
+                        Console.WriteLine("----------------------------------------------------------");
 
-                        //List of policies to choose from to change
-                        Console.WriteLine("1. Travel Insurance Policy");
-                        Console.WriteLine("2. Medical Insurance Policy");
-                        Console.WriteLine("3. Car Insurance Policy");
-
-                        //Prompt user for option number
                         Console.Write("Please enter option No. : ");
+                        int optionNo = Convert.ToInt32(Console.ReadLine());
 
-                        int newPol = Convert.ToInt32(Console.ReadLine());
-
-
-                        if (newPol == 1)
+                        if (optionNo == 1)
                         {
-                            newPolicyList[accountNo].PName = "Travel Insurance";
+
+                            //List of policies to choose from to change
+                            Console.WriteLine("1. Travel Insurance Policy");
+                            Console.WriteLine("2. Medical Insurance Policy");
+                            Console.WriteLine("3. Car Insurance Policy");
+
+                            //Prompt user for option number
+                            Console.Write("Please enter option No. : ");
+
+                            int newPol = Convert.ToInt32(Console.ReadLine());
+
+
+                            if (newPol == 1)
+                            {
+                                newPolicyList[accountNo].PName = "Travel Insurance";
+
+                            }
+
+                            else if (newPol == 2)
+                            {
+
+                            }
+
+                            else if (newPol == 3)
+                            {
+
+                            }
+
 
                         }
 
-                        else if (newPol == 2)
+                        else if (optionNo == 2)
                         {
 
                         }
 
-                        else if (newPol == 3)
+                        else if (optionNo == 3)
                         {
 
                         }
 
+                        else if (optionNo == 0)
+                        {
+                            break;
+                        }
 
                     }
-
-                    else if (optionNo == 2)
-                    {
-
-                    }
-
-                    else if (optionNo == 3)
-                    {
-
-                    }
-
-                    else if (optionNo == 0)
-                    {
-                        break;
-                    }
-
                 }
-
+            }
             }
         }
 
@@ -209,7 +213,7 @@ namespace AOOAD_FinalAssignment
 
 
 
-    }
+
 
         //Option 3
         static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
@@ -262,9 +266,9 @@ namespace AOOAD_FinalAssignment
             {
                 Console.WriteLine("You have no Outstanding Payments. Thank You");
             }
-      
 
 
+        }
         }
     }
 
