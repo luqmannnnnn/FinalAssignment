@@ -140,14 +140,14 @@ namespace AOOAD_FinalAssignment
 
         Client c = new Client();
 
-        public Policy(int pno, string pname, string cname, DateTime sd, DateTime ed, double price )
+        public Policy(int pno, string pname, string cname, DateTime sd, DateTime ed, double price)
         {
             PNo = pno;
             PName = pname;
             CName = cname;
             StartDate = sd;
             EndDate = ed;
-            PremiumPrice = price;
+            PremiumPrice = price;  
         }
         //For Observer Pattern
         public Policy(){
