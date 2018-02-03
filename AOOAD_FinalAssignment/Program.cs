@@ -87,7 +87,7 @@ namespace AOOAD_FinalAssignment
 
                 else if (userOption == 3)
                 {
-                    // DisplayOutstandingPayments(clientList, receiptList);
+                    DisplayOutstandingPayments(clientList, receiptList);
                 }
 
                 else if (userOption == 4)
@@ -128,7 +128,7 @@ namespace AOOAD_FinalAssignment
                 Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}", "Policy No: ", " Policy Name: ", "Client Name: ", "Start Date: ", "End Date: ", "Price: ");
                 Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate, newPolicyList[i].EndDate, newPolicyList[i].PremiumPrice);
 
-            
+
                 Console.Write("Please enter account number to edit: ");
                 int accountNo = Convert.ToInt32(Console.ReadLine());
 
@@ -167,6 +167,8 @@ namespace AOOAD_FinalAssignment
                             if (newPol == 1)
                             {
                                 newPolicyList[accountNo].PName = "Travel Insurance";
+                                Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}", "Policy No: ", " Policy Name: ", "Client Name: ", "Start Date: ", "End Date: ", "Price: ");
+                                Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}", newPolicyList[accountNo].PNo, newPolicyList[accountNo].PName, newPolicyList[accountNo].CName, newPolicyList[accountNo].StartDate, newPolicyList[accountNo].EndDate, newPolicyList[accountNo].PremiumPrice);
 
                             }
 
@@ -201,19 +203,7 @@ namespace AOOAD_FinalAssignment
                     }
                 }
             }
-            }
         }
-
-
-
-
-
-
-
-
-
-
-
 
         //Option 3
         static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
@@ -269,6 +259,8 @@ namespace AOOAD_FinalAssignment
 
 
         }
-        }
     }
+
+}
+ 
 
