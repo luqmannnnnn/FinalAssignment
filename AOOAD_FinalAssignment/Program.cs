@@ -114,6 +114,7 @@ namespace AOOAD_FinalAssignment
             Console.WriteLine("0. Exit the Program");
             Console.WriteLine("-----------------------------------------------------");
         }
+
         //Option 2
         static void editPolicy(List<Policy> newPolicyList)
         {
