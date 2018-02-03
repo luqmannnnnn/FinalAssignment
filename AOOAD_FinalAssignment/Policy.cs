@@ -147,7 +147,7 @@ namespace AOOAD_FinalAssignment
             CName = cname;
             StartDate = sd;
             EndDate = ed;
-            PremiumPrice = price;
+            PremiumPrice = price;  
         }
         //For Observer Pattern
         public Policy(){

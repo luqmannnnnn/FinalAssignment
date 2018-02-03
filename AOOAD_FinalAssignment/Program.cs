@@ -165,8 +165,6 @@ namespace AOOAD_FinalAssignment
                 Console.WriteLine("You have no Outstanding Payments. Thank You");
             }
       
-            
-
 
 
         }
