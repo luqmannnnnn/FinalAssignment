@@ -14,6 +14,7 @@ namespace AOOAD_FinalAssignment
             List<Client> clientList = new List<Client>();
             List<Policy> policyList = new List<Policy>();
             List<Policy> newPolicyList = new List<Policy>();
+            List<Receipt> receiptList = new List<Receipt>();
             
             //Clients Objects
             clientList.Add(new Client(001, "Tan Kah Kee", "15 Bedok North Road Singapore: 130355"));
@@ -65,16 +66,16 @@ namespace AOOAD_FinalAssignment
                     DateTime endDate = DateTime.Parse(Console.ReadLine());
 
                     int nplIndex = newPolicyList.Count;
-                    newPolicyList.Add(new Policy(nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate, endDate));
-                    Console.WriteLine("\nSummary:\n{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}", nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate.ToString("dd/MM/yyyy"), endDate.ToString("dd/MM/yyyy"));
+                    newPolicyList.Add(new Policy(nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate, endDate, policyList[policyIndex].PremiumPrice));
+                    Console.WriteLine("\nSummary:\n{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}", nplIndex, policyList[policyIndex].PName, clientList[clientIndex].CName, startDate.ToString("dd/MM/yyyy"), endDate.ToString("dd/MM/yyyy"), policyList[policyIndex].PremiumPrice);
 
                     Console.WriteLine("\t-----");
                     for (int i = 0; i < newPolicyList.Count; i++)
                     {
-                        Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate.ToString("dd/MM/yyyy"), newPolicyList[i].EndDate.ToString("dd/MM/yyyy"));
+                        Console.WriteLine("{0,-5} {1,-20} {2,-20} {3,-20} {4,-20}, {5,-20}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate.ToString("dd/MM/yyyy"), newPolicyList[i].EndDate.ToString("dd/MM/yyyy"), newPolicyList[i].PremiumPrice);
                             
                           
-                            }
+                    }
 
                 }
 
@@ -85,7 +86,7 @@ namespace AOOAD_FinalAssignment
 
                 else if (userOption == 3)
                 {
-                    
+                    DisplayOutstandingPayments(clientList, receiptList);
                 }
 
                 else if (userOption == 4)
@@ -106,11 +107,65 @@ namespace AOOAD_FinalAssignment
         {
             Console.WriteLine("------------- Welcome to Provident Life--------------");
             Console.WriteLine("1. Create Insurance Policy");
-            Console.WriteLine("2. Edit Exisiting Policy");
-            Console.WriteLine("3. Send an Email Alert");
-            Console.WriteLine("4. View Outstanding Insurance Preimums");
+            Console.WriteLine("2. Edit Existing Policy");
+            Console.WriteLine("3. View Outstanding Insurance Preimums");
+            Console.WriteLine("4. Send Email Alert");
             Console.WriteLine("0. Exit the Program");
             Console.WriteLine("-----------------------------------------------------");
+        }
+
+        static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
+        {
+            //View Oustanding Insurance Premiums
+            Console.WriteLine("-------------View Outstanding Insurance Premiums------------");
+            Console.WriteLine("Enter Account Number:");
+            int userAccNo = Convert.ToInt32(Console.ReadLine());
+
+            //Display Client Details
+            for (int i = 0; i < clientList.Count; i++)
+            {
+                if (userAccNo == clientList[i].CAccNo)
+                {
+                    Console.WriteLine("{0,-5} {1,-20} {2,-30}", "ID:", "Name:", "Address");
+                    Console.WriteLine("{0,-5} {1,-20} {2,-30}", clientList[i].CAccNo, clientList[i].CName, clientList[i].CAddress);
+                }
+            }
+
+            //Promopt Insurance End-Date
+            Console.WriteLine("Please Enter Insurance End-Date (DD/MM/YYYY): ");
+            DateTime insuranceEndDate = Convert.ToDateTime(Console.ReadLine());
+
+            //System Checks if the Payment is Overdue
+            if (DateTime.Now > insuranceEndDate)
+            {
+                Console.WriteLine("You have an Oustanding Payment. Please pay using a Credit Card");
+
+                Console.WriteLine("Enter Full Name on Credit Card: ");
+                string userCreditName = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Enter Credit Card Number: ");
+                string userCreditNo = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Enter Expiry Date: ");
+                string userCreditExpiry = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Enter Security Code: ");
+                string userCreditCode = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Enter Pin: ");
+                string userCreditPin = Convert.ToString(Console.ReadLine());
+
+                
+
+
+            }
+
+            else
+            {
+                Console.WriteLine("You have no Outstanding Payments. Thank You");
+            }
+      
+          
         }
     }
 }

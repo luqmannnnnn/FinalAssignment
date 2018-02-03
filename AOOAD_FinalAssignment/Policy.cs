@@ -95,7 +95,7 @@ namespace AOOAD_FinalAssignment
             {
                 return startDate;
             }
-            set
+              set
             {
                 startDate = value;
             }
@@ -140,13 +140,14 @@ namespace AOOAD_FinalAssignment
 
         Client c = new Client();
 
-        public Policy(int pno, string pname, string cname, DateTime sd, DateTime ed)
+        public Policy(int pno, string pname, string cname, DateTime sd, DateTime ed, double price )
         {
             PNo = pno;
             PName = pname;
             CName = cname;
             StartDate = sd;
             EndDate = ed;
+            PremiumPrice = price;
         }
         //For Observer Pattern
         public Policy(){
