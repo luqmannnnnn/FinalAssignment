@@ -251,6 +251,53 @@ namespace AOOAD_FinalAssignment
                 Console.WriteLine("Enter Pin: ");
                 string userCreditPin = Convert.ToString(Console.ReadLine());
 
+                Console.WriteLine("Select Insurance Policy (Medical/Car/Travel): ");
+                string userPayItem = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Enter Payment Amount: ");
+                double userPayAmt = Convert.ToDouble(Console.ReadLine());
+
+                //Append to Receipt List
+                Receipt r1 = new Receipt(DateTime.Now, userCreditName, userPayItem, userPayAmt);
+                receiptList.Add (r1);
+
+                //Display Receipt
+                Console.WriteLine("{0,-10} {1,-30} {2,-20} {3,-15}", "Date & Time", "Client Name", "Item", "Payment Amount");
+                Console.WriteLine("{0,-10} {1,-30} {2,-20} {3,-15}", DateTime.Now, r1.ClientName, r1.PaymentItem, r1.PaymentAmt);
+
+
+
+            }
+            else
+            {
+                Console.WriteLine("You have no Outstanding Payments. Thank You");
+            }
+        }
+
+        //option 4
+
+        //option 5
+        static void addRiders(List<Rider> riderList)
+        {
+            while (true)
+            {
+                Console.WriteLine("\n----------------Add a Rider----------------\n");
+
+                //Prompt for rider Name
+                Console.Write("Please enter rider's name: ");
+                string rName = Convert.ToString(Console.ReadLine());
+
+                //Prompt for rider description
+                Console.Write("Please enter rider description. : ");
+                String rDesc = Convert.ToString(Console.ReadLine());
+
+                //Prompt for rider premium price
+                Console.Write("Please enter premium price: ");
+                int rpPrice = Convert.ToInt32(Console.ReadLine());
+
+                //Append Rider in List
+                Rider rider1 = new Rider(rName, rDesc, rpPrice);
+                riderList.Add(rider1);
 
                 //Display Rider Description
                 Console.WriteLine("{0,-5} {1,-20} {2,-50}", "Name:", "Description:", "Price:");
@@ -270,6 +317,10 @@ namespace AOOAD_FinalAssignment
                 }
 
             }
+
+
+
+
         }
     }
 }
