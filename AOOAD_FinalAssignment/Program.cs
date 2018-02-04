@@ -360,25 +360,27 @@ namespace AOOAD_FinalAssignment
         static void sendEmailAlert(List<Policy> newPolicyList)
         {
             Console.WriteLine("\n-------------View Policies With Premium Due------------\n");
-            Console.WriteLine("The following policies are still under ongoing payment");
+            Console.WriteLine("The following policies are still under ongoing payment\n");
+            Console.WriteLine("{0,-5} {1,-20} {2,-20} {3, -20} {4, -20} {5,-10}", "Policy No.", "Policy Name", "Client Name", "Start Date", "End Date", "Price");
             for (int i = 0; i<newPolicyList.Count; i++)
             {
                 if (newPolicyList[i].EndDate > DateTime.Now)
                 {
-                    Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20} {5,-10}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate, newPolicyList[i].EndDate, newPolicyList[i].PremiumPrice);
+                    Console.WriteLine("{0,-5} {1,-20} {2,-20} {3, -20} {4, -20} ${5,-10}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate.ToString("dd/MM/yyyy"), newPolicyList[i].EndDate.ToString("dd/MM/yyyy"), newPolicyList[i].PremiumPrice);
 
                 }
+                else
+                    Console.WriteLine("No data");
 
             }
-            Console.Write("Select policy number to send email alert");
+            Console.Write("\nSelect policy number to send email alert\n");
+
             int PNOAlert = Convert.ToInt32(Console.ReadLine());
             DateTime reference = DateTime.Now;
             DateTime firstDayThisMonth = new DateTime(reference.Year, reference.Month, 1);
             DateTime firstDayPlusTwoMonths = firstDayThisMonth.AddMonths(2);
             DateTime lastDayNextMonth = firstDayPlusTwoMonths.AddDays(-1);
-            DateTime endOfLastDayNextMonth = firstDayPlusTwoMonths.AddTicks(-1);
-
-            Console.WriteLine("PAYMENT ALERT: Dear {0},\nYou are reminded to pay your oustanding balance by {1}. Kindly settle the payment as soon as posible.", newPolicyList[PNOAlert].CName, lastDayNextMonth);
+            Console.WriteLine("PAYMENT ALERT: Dear {0},\nYou are reminded to pay your oustanding balance by {1}. Kindly settle the payment as soon as posible.", newPolicyList[PNOAlert].CName, lastDayNextMonth.ToString("dd/MM/yyyy"));
         }
         
     }
