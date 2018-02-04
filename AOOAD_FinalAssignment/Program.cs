@@ -15,13 +15,7 @@ namespace AOOAD_FinalAssignment
             List<Policy> newPolicyList = new List<Policy>();
             List<Receipt> receiptList = new List<Receipt>();
             List<Rider> riderList = new List<Rider>();
-
-            //riderList.Add(new Rider("Tan Wee Lee", "Is a cool guy", 98.80)); 
             
-
-
-
-
             clientList.Add(new Client(001, "Tan Kah Kee", "15 Bedok North Road Singapore: 130355"));
             clientList.Add(new Client(002, "Ahmad Ibrahim", "BLK 33 Tech Whye Lane Singapore: 4020333"));
             clientList.Add(new Client(003, "Saravanan T.", "BLK 21 Jalan Bukit Merah Singapore: 521421"));
