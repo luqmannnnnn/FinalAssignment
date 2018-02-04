@@ -50,5 +50,12 @@ namespace AOOAD_FinalAssignment
                 rPremiumPrice = value;
             }
         }
+
+        public Rider(string name, string desc, int price)
+        {
+            riderName = name;
+            riderDesc = desc;
+            rPremiumPrice = price;
+        }
     }
 }

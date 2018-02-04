@@ -262,8 +262,8 @@ namespace AOOAD_FinalAssignment
                 receiptList.Add (r1);
 
                 //Display Receipt
-                Console.WriteLine("{0,-10} {1,-30} {2,-20} {3,-15}", "Date & Time", "Client Name", "Item", "Payment Amount");
-                Console.WriteLine("{0,-10} {1,-30} {2,-20} {3,-15}", DateTime.Now, r1.ClientName, r1.PaymentItem, r1.PaymentAmt);
+                Console.WriteLine("{0,-25} {1,-20} {2,-15} {3,-15}", "Date & Time", "Client Name", "Item", "Payment Amount");
+                Console.WriteLine("{0,-25} {1,-20} {2,-15} {3,-15}", DateTime.Now, r1.ClientName, r1.PaymentItem, r1.PaymentAmt);
 
 
 
