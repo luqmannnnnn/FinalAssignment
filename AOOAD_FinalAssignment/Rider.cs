@@ -50,13 +50,5 @@ namespace AOOAD_FinalAssignment
                 rPremiumPrice = value;
             }
         }
-
-        public Rider(String rname, String desc, int price)
-        {
-            riderName = rname;
-            riderDesc = desc;
-            rPremiumPrice = price;
-        }
-
     }
 }
