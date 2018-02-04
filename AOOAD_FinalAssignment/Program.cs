@@ -73,22 +73,36 @@ namespace AOOAD_FinalAssignment
                 }
                 else if (userOption == 2)
                 {
-                    editPolicy(newPolicyList);
+                    Console.WriteLine("\n------------- View Policy--------------");
+                    Console.WriteLine("1. Edit Existing Policy");
+                    Console.WriteLine("2. Add Riders");
+                    Console.WriteLine("3. Pay by Cheque ");
+                    Console.WriteLine("----------------------------------------------------------\n");
+                    Console.Write("Please enter option No. : ");
+                    int optionNumber = Convert.ToInt32(Console.ReadLine());
+                    if (optionNumber == 1)
+                    {
+                        editPolicy(newPolicyList);
+                    }
+                    else if (optionNumber == 2)
+                    {
+                        addRiders(riderList);
+                    }
+                    if (optionNumber == 3)
+                    {
+                        //call pay by cheque method
+                    }
+                    
                 }
 
                 else if (userOption == 3)
                 {
-                    // DisplayOutstandingPayments(clientList, receiptList);
+                    DisplayOutstandingPayments(clientList, receiptList);
                 }
 
                 else if (userOption == 4)
                 {
 
-                }
-
-                else if (userOption == 5)
-                {
-                    addRiders(riderList);
                 }
 
                 else if (userOption == 0)
@@ -103,15 +117,14 @@ namespace AOOAD_FinalAssignment
         {
             Console.WriteLine("\n------------- Welcome to Provident Life--------------");
             Console.WriteLine("1. Create Insurance Policy");
-            Console.WriteLine("2. Edit Existing Policy");
+            Console.WriteLine("2. View Policy");
             Console.WriteLine("3. View Outstanding Insurance Preimums");
             Console.WriteLine("4. Send Email Alert");
-            Console.WriteLine("5. Add Rider");
             Console.WriteLine("0. Exit the Program");
             Console.WriteLine("-----------------------------------------------------\n");
         }
 
-        //Option 2
+        //edit policy
         static void editPolicy(List<Policy> newPolicyList)
         {
             //Prompt to enter which account to edit
@@ -203,6 +216,48 @@ namespace AOOAD_FinalAssignment
                 }
             }
         }
+        //add riders
+        static void addRiders(List<Rider> riderList)
+        {
+            while (true)
+            {
+                Console.WriteLine("\n----------------Add a Rider----------------\n");
+
+                //Prompt for rider Name
+                Console.Write("Please enter rider's name: ");
+                string rName = Convert.ToString(Console.ReadLine());
+
+                //Prompt for rider description
+                Console.Write("Please enter rider description. : ");
+                String rDesc = Convert.ToString(Console.ReadLine());
+
+                //Prompt for rider premium price
+                Console.Write("Please enter premium price: ");
+                int rpPrice = Convert.ToInt32(Console.ReadLine());
+
+                //Append Rider in List
+                Rider rider1 = new Rider(rName, rDesc, rpPrice);
+                riderList.Add(rider1);
+
+                //Display Rider Description
+                Console.WriteLine("{0,-5} {1,-20} {2,-50}", "Name:", "Description:", "Price:");
+                Console.WriteLine("{0,-5} {1,-20} {2,-50}", rider1.RiderName, rider1.RiderDesc, rider1.RPremiumPrice);
+
+                Console.Write("1: Add another rider. 0: Back to main menu: ");
+                int contRider = Convert.ToInt32(Console.ReadLine());
+
+                if (contRider == 1)
+                {
+                    continue;
+                }
+
+                else
+                {
+                    break;
+                }
+
+            }
+        }
         //Option 3
         static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
         {
@@ -244,6 +299,20 @@ namespace AOOAD_FinalAssignment
 
                 Console.WriteLine("Enter Pin: ");
                 string userCreditPin = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Select Insurance Policy (Medical/Car/Travel): ");
+                string userPayItem = Convert.ToString(Console.ReadLine());
+
+                Console.WriteLine("Enter Payment Amount: ");
+                double userPayAmt = Convert.ToDouble(Console.ReadLine());
+
+                //Append to Receipt List
+                Receipt r1 = new Receipt(DateTime.Now, userCreditName, userPayItem, userPayAmt);
+                receiptList.Add (r1);
+
+                //Display Receipt
+                Console.WriteLine("{0,-25} {1,-20} {2,-15} {3,-15}", "Date & Time", "Client Name", "Item", "Payment Amount");
+                Console.WriteLine("{0,-25} {1,-20} {2,-15} {3,-15}", DateTime.Now, r1.ClientName, r1.PaymentItem, r1.PaymentAmt);
             }
             else
             {
@@ -253,52 +322,7 @@ namespace AOOAD_FinalAssignment
 
         //option 4
 
-        //option 5
-        static void addRiders(List<Rider> riderList)
-        {
-            while (true)
-            {
-                Console.WriteLine("\n----------------Add a Rider----------------\n");
-
-                //Prompt for rider Name
-                Console.Write("Please enter rider's name: ");
-                string rName = Convert.ToString(Console.ReadLine());
-
-                //Prompt for rider description
-                Console.Write("Please enter rider description. : ");
-                String rDesc = Convert.ToString(Console.ReadLine());
-
-                //Prompt for rider premium price
-                Console.Write("Please enter premium price: ");
-                int rpPrice = Convert.ToInt32(Console.ReadLine());
-
-                //Append Rider in List
-                Rider rider1 = new Rider(rName, rDesc, rpPrice);
-                riderList.Add(rider1);
-
-                //Display Rider Description
-                Console.WriteLine("{0,-5} {1,-20} {2,-50}", "Name:", "Description:", "Price:");
-                Console.WriteLine("{0,-5} {1,-20} {2,-50}", rider1.RiderName, rider1.RiderDesc, rider1.RPremiumPrice);
-
-                Console.Write("1: Add another rider. 0: Back to main menu: ");
-                int contRider = Convert.ToInt32(Console.ReadLine());
-
-                if (contRider ==1)
-                {
-                    continue;
-                }
-
-                else
-                {
-                    break;
-                }
-
-            }
-
-
-
-
-        }
+        
     }
 }
         

@@ -51,12 +51,11 @@ namespace AOOAD_FinalAssignment
             }
         }
 
-        public Rider(String rname, String desc, int price)
+        public Rider(string name, string desc, int price)
         {
-            riderName = rname;
+            riderName = name;
             riderDesc = desc;
             rPremiumPrice = price;
         }
-
     }
 }
