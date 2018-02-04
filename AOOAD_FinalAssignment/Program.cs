@@ -15,13 +15,8 @@ namespace AOOAD_FinalAssignment
             List<Policy> newPolicyList = new List<Policy>();
             List<Receipt> receiptList = new List<Receipt>();
             List<Rider> riderList = new List<Rider>();
-
-            //riderList.Add(new Rider("Tan Wee Lee", "Is a cool guy", 98.80)); 
+           
             
-
-
-
-
             clientList.Add(new Client(001, "Tan Kah Kee", "15 Bedok North Road Singapore: 130355"));
             clientList.Add(new Client(002, "Ahmad Ibrahim", "BLK 33 Tech Whye Lane Singapore: 4020333"));
             clientList.Add(new Client(003, "Saravanan T.", "BLK 21 Jalan Bukit Merah Singapore: 521421"));
@@ -96,7 +91,7 @@ namespace AOOAD_FinalAssignment
                     }
                     if (optionNumber == 3)
                     {
-                        //call pay by cheque method
+                        payCheque(newPolicyList);
                     }
                     
                 }
@@ -263,6 +258,41 @@ namespace AOOAD_FinalAssignment
                 }
 
             }
+
+        }
+
+        //Pay Cheque method
+        static void payCheque(List<Policy> newPolicyList)
+        {
+            Console.WriteLine("\n------------------Pay By Cheque-------------------\n");
+
+            //Displaying New Policy List 
+            for (int i = 0; i < newPolicyList.Count; i++)
+            {
+                Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}{5,-10}", "Policy No: ", " Policy Name: ", "Client Name: ", "Start Date: ", "End Date: ", "Price: ");
+                Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20} {5,-10}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate, newPolicyList[i].EndDate, newPolicyList[i].PremiumPrice);
+            }
+
+            //prompt agent for policy number they want to pay for 
+            Console.Write("Please enter policy number you want to pay for: ");
+            int payPolicy = Convert.ToInt32(Console.ReadLine());
+
+
+            //Display whether payment is succcessful or otherwise.
+            for (int i = 0; i < newPolicyList.Count; i++)
+            {
+                if ( payPolicy == newPolicyList[i].PNo)
+                {
+                    Console.Write("Payment Successful!");
+                }
+                else
+                {
+                    Console.Write("The Policy Number you have entered is invalid.");
+                    break;
+                }
+            }
+
+
         }
         //Option 3
         static void DisplayOutstandingPayments(List<Client> clientList, List<Receipt> receiptList)
