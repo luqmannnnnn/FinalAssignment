@@ -109,6 +109,7 @@ namespace AOOAD_FinalAssignment
             Console.WriteLine("2. Edit Existing Policy");
             Console.WriteLine("3. View Outstanding Insurance Preimums");
             Console.WriteLine("4. Send Email Alert");
+            Console.WriteLine("5. Add Rider");
             Console.WriteLine("0. Exit the Program");
             Console.WriteLine("-----------------------------------------------------");
         }
@@ -127,7 +128,7 @@ namespace AOOAD_FinalAssignment
                 Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20}{5,-10}", "Policy No: ", " Policy Name: ", "Client Name: ", "Start Date: ", "End Date: ", "Price: ");
                 Console.WriteLine("{0,-5} {1,-20} {2,-30} {3, -20} {4, -20} {5,-10}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate, newPolicyList[i].EndDate, newPolicyList[i].PremiumPrice);
 
-                //
+                //Prompt for agent to enter which account to edit
                 Console.Write("Please enter account number to edit: ");
                 int accountNo = Convert.ToInt32(Console.ReadLine());
 
@@ -171,7 +172,7 @@ namespace AOOAD_FinalAssignment
                                 }
 
                             }
-                            //Trouble displaying needs fixing
+                            //Changes insurance to medical insurance
                             else if (newPol == 2)
                             {
 
@@ -184,7 +185,7 @@ namespace AOOAD_FinalAssignment
                                 }
                             }
 
-                            //Trouble displaying needs fixing
+                            //Changes insuranace to car insurance
                             else if (newPol == 3)
                             {
                                 newPolicyList[accountNo].PName = "Car Insurance EDITED";
@@ -198,6 +199,7 @@ namespace AOOAD_FinalAssignment
 
                         }
 
+                        //Extends end date of insurance for client
                         else if (optionNo == 2)
                         {
 
@@ -279,6 +281,13 @@ namespace AOOAD_FinalAssignment
                 Console.WriteLine("You have no Outstanding Payments. Thank You");
             }
         }
+        
+        //option 4
+
+        //option 5
+        static void addRiders()
+
+
     }
 }
         
