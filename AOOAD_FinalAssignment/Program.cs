@@ -361,26 +361,40 @@ namespace AOOAD_FinalAssignment
         {
             Console.WriteLine("\n-------------View Policies With Premium Due------------\n");
             Console.WriteLine("The following policies are still under ongoing payment\n");
-            Console.WriteLine("{0,-5} {1,-20} {2,-20} {3, -20} {4, -20} {5,-10}", "Policy No.", "Policy Name", "Client Name", "Start Date", "End Date", "Price");
-            for (int i = 0; i<newPolicyList.Count; i++)
+            if (newPolicyList.Count > 0)
             {
-                if (newPolicyList[i].EndDate > DateTime.Now)
+                Console.WriteLine("{0,-5} {1,-20} {2,-20} {3, -20} {4, -20} {5,-10}", "Policy No.", "Policy Name", "Client Name", "Start Date", "End Date", "Price");
+                for (int i = 0; i < newPolicyList.Count; i++)
                 {
-                    Console.WriteLine("{0,-5} {1,-20} {2,-20} {3, -20} {4, -20} ${5,-10}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate.ToString("dd/MM/yyyy"), newPolicyList[i].EndDate.ToString("dd/MM/yyyy"), newPolicyList[i].PremiumPrice);
+                    if (newPolicyList[i].EndDate > DateTime.Now)
+                    {
+                        Console.WriteLine("{0,-5} {1,-20} {2,-20} {3, -20} {4, -20} ${5,-10}", newPolicyList[i].PNo, newPolicyList[i].PName, newPolicyList[i].CName, newPolicyList[i].StartDate.ToString("dd/MM/yyyy"), newPolicyList[i].EndDate.ToString("dd/MM/yyyy"), newPolicyList[i].PremiumPrice);
 
+                    }
+                }
+                Console.Write("\nSelect policy number to send email alert\n");
+
+                int PNOAlert = Convert.ToInt32(Console.ReadLine());
+                DateTime reference = DateTime.Now;
+                DateTime firstDayThisMonth = new DateTime(reference.Year, reference.Month, 1);
+                DateTime firstDayPlusTwoMonths = firstDayThisMonth.AddMonths(2);
+                DateTime lastDayNextMonth = firstDayPlusTwoMonths.AddDays(-1);
+                Console.WriteLine("PAYMENT ALERT: Dear {0},\nYou are reminded to pay your oustanding balance by {1}. Kindly settle the payment as soon as posible.", newPolicyList[PNOAlert].CName, lastDayNextMonth.ToString("dd/MM/yyyy"));
+                Console.Write("Print letter? (Y/N): ");
+                string stat = Console.ReadLine();
+                if (stat == "Y")
+                {
+                    Console.WriteLine("Print job sent");
                 }
                 else
-                    Console.WriteLine("No data");
+                    Console.WriteLine("Return to main menu");
 
             }
-            Console.Write("\nSelect policy number to send email alert\n");
-
-            int PNOAlert = Convert.ToInt32(Console.ReadLine());
-            DateTime reference = DateTime.Now;
-            DateTime firstDayThisMonth = new DateTime(reference.Year, reference.Month, 1);
-            DateTime firstDayPlusTwoMonths = firstDayThisMonth.AddMonths(2);
-            DateTime lastDayNextMonth = firstDayPlusTwoMonths.AddDays(-1);
-            Console.WriteLine("PAYMENT ALERT: Dear {0},\nYou are reminded to pay your oustanding balance by {1}. Kindly settle the payment as soon as posible.", newPolicyList[PNOAlert].CName, lastDayNextMonth.ToString("dd/MM/yyyy"));
+            else
+            {
+                Console.WriteLine("Data is Empty");
+                
+            }
         }
         
     }
