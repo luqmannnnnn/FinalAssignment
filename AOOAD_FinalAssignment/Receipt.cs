@@ -12,6 +12,7 @@ namespace AOOAD_FinalAssignment
         private DateTime rDAte;
         private string paymentItem;
         private double paymentAmt;
+        private string clientName;
 
         public int MyReceipt
         {
@@ -63,6 +64,27 @@ namespace AOOAD_FinalAssignment
             {
                 paymentAmt = value;
             }
+        }
+
+        public string ClientName
+        {
+            get
+            {
+                return clientName;
+            }
+
+            set
+            {
+                clientName = value;
+            }
+        }
+
+        public Receipt(DateTime date, string clientN ,string payItem, double payAmt)
+        {
+            rDAte = date;
+            clientName = clientN;
+            paymentItem = payItem;
+            paymentAmt = payAmt;
         }
     }
 }
