@@ -269,6 +269,7 @@ namespace AOOAD_FinalAssignment
                 Console.WriteLine("Enter Pin: ");
                 string userCreditPin = Convert.ToString(Console.ReadLine());
 
+                //Adding of Payment Details to Receipt List
 
 
 
